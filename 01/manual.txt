@@ -1,0 +1,19 @@
+Greeting.java pseudocode
+
+- prompt for name
+- print "Hello "
+- print name
+- print ", how was your first week of clas?"
+
+Output:
+
+say: "What is your name?"
+say: "Hello My name is Griffin, how was your first week of class?"
+
+Input:
+
+user said: "My name is Griffin"
+
+Variables:
+
+name = "My name is Griffin"

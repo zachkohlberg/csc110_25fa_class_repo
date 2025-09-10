@@ -1,0 +1,12 @@
+Output
+
+say: "What is your name?"
+say: "Hello Jacob, how was your first week of class?"
+
+Input
+
+user responded "Jacob"
+
+Variables
+
+name = "Jacob"
