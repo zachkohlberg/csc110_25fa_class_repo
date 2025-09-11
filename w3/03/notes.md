@@ -86,3 +86,27 @@ This is fine. This means "set x to 5", then "set x to 6"
 ## Conversions
 
 see notes from section 01 or 02
+
+## Numbers
+
+- % and integer division
+	- dividing ints gives a truncated result (drops everything after decimal)
+	- % (modulo/remainder) gives remainder of division
+- overflow: ints are limited size, wrap around when exceeding min/max value
+- floating-point numbers (doubles) are not precise and can have roundoff errors
+
+## Strings
+
+- a + sign will concatenate if either operand is a string
+- method
+	- function attached to an object (like String)
+	- all Java functions are technically methods, but we'll just use the term for those that we
+	  call like methods
+	- need a value of the type to call the method (e.g. "hello".toUpperCase())
+- escape sequences
+	- start with a backslash \ and allow us to add special characters to string literals
+	- \\ -> backslash
+	- \" -> double quote
+	- \' -> single quote (not necessary except in char literals)
+	- \n -> newline
+	- \t -> tab

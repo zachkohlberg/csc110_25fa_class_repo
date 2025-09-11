@@ -116,3 +116,7 @@ This is fine. This means "store the number 5 in x, then overwrite it with the nu
 	- \' -> single-quote (not necessary to escape this in a string)
 	- \n -> newline
 	- \t -> tab
+
+## Errors
+
+See outline.
