@@ -94,3 +94,25 @@ This is fine. This means "store the number 5 in x, then overwrite it with the nu
 	- functions that parse Strings into other types
 		- Integer.parseInt(a string that represents an int)
 		- Double.parseDouble(a strings the represents a double)
+
+## Numbers and Strings
+
+- % is the modulo/remainder operator, divides and returns remainder
+- / used with two ints will truncate the result (round towards zero/discard everything after decimal)
+- integer division and modulo are good for unit conversions (inches -> feet,inches)
+- integers can overflow if too big/small
+- doubles aren't precise and can have roundoff errors
+- + will concatenate if at least one operand is a string
+- methods
+	- functions attached to "objects" (right now, just strings)
+	- can call a string method with a dot after a string expression
+- strings are zero-indexed
+	- positions in a substring are specified with the offset from the beginning
+	- first position is zero because it is the beginning, so we count up from 0
+	- ranges also tend to include the beginning and exclude the end, so substring(0, 4) includes 0-3, not 4
+- escape sequences: can include special characters in a string by escaping with e backslash: \
+	- \\ -> backslash
+	- \" -> double-quote
+	- \' -> single-quote (not necessary to escape this in a string)
+	- \n -> newline
+	- \t -> tab
