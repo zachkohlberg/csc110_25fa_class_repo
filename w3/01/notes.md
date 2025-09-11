@@ -134,3 +134,27 @@ this just means set x to 5, then change it to 6
 
 Integer.parseInt(a string) // returns an int
 Double.parseDouble(a string) // returns a double
+
+## Numbers and Strings
+
+- % operator takes a remainder, called "modulo" or "modulus" operator
+- dividing two integers truncates result to an int
+- concatenation
+	- + operator concatenates when either operand is a string
+	- follows normal order of operations (* and / happen before concatenation)
+	- if other operand is not a string, it will be converted to a string
+- method = function attached to an "object"
+	- for now, Strings are the only type with methods
+	- technically all functions we've seen are methods
+	- any String expression can call a String method
+- escape sequences start with a backslash: \ and let you include special characters in strings
+	- \\ -> backslash
+	- \" -> double-quote
+	- \' -> single-quote
+	- \n -> line break
+	- \t -> tab
+
+## Errors
+
+See the outline.
+
