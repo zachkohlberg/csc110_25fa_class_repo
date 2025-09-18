@@ -50,5 +50,59 @@ Correct:
 	- evaluates to true/false
 	- use this when writing boolean expressions, not for assignments
 
-## If statements
+## If Statements
 
+If structure:
+
+```
+if (condition) {
+	if_body
+}
+
+if (condition) {
+	if_body
+} else {
+	else_body
+}
+```
+
+- if and else are keywords
+- the condition is a boolean expression, must be inside parenthesis
+- the if_body and else_body are blocks of one or more statements
+- if the condition evaluates to true, then the if_body is executed
+- if the condition evaluates to false, then the else_body is executed (if it exists)
+
+## While Statements (While Loops)
+
+While structure:
+
+```
+while (condition) {
+	while_body
+}
+```
+
+- while is a keyword (just like if)
+- the condition is a boolean expression in parenthesis (just like if)
+- the body is one or more statements in a code block (just like if)
+- if the condition is true, then the body is executed and this whole process repeats
+- if the condition is false, then the body is not executed and the program continues
+
+## Counting Loop
+
+When to use it?
+
+- You want a loop to repeat a specific number of times.
+- Your program can calculate the number of repetitions.
+
+```
+// init: declare and set a counter variable to 0
+int i = 0;
+// condition: the counter variable is less than the number of repetitions
+while (i < repetitions) {
+	// body: whatever else the loop does
+	
+	// update: increment (increase by 1) the counter at the end of the body
+	i = i + 1;
+}
+```
