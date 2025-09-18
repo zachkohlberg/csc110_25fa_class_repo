@@ -48,3 +48,59 @@ Right: 0 <= x && x <= 50
 	- used in boolean expressions
 	- not for assigning to a variable
 
+## If Statements
+
+If structure:
+
+```
+if (condition) {
+	if_body
+}
+
+if (condition) {
+	if_body
+} else {
+	else_body
+}
+```
+
+- if and else are keywords
+- the condition is a boolean expression wrapped in parenthesis
+- the if_body and else_body are one or more statements
+- if the condition evaluates to true, then we execute the if_body
+- if the condition evaluates to false, then we execute the else_body (if we have one)
+
+## While Statement (While Loop)
+
+While structure:
+
+```
+while (condition) {
+	while_body
+}
+```
+
+- while is a keyword (just like if)
+- the condition is a boolean expression in parenthesis (like if)
+- the body is one or more statements (like if)
+- if the condition is true, then the body is executed and this process repeats
+- if the condition is false, then we move on
+
+## Counting Loop
+
+When to use one:
+
+- You know how many times the loop should repeat.
+- Your code can calculate how many times the loop should repeat.
+
+```
+// init: create a counter variable and set it to 0
+int i = 0;
+// condition: the counter is less than the desired number of repetitions
+while (i < repetitions) {
+	// body: whatever the loop is repeating
+	
+	// update: increment the counter (increase its value by 1)
+	i = i + 1;
+}
+```
