@@ -47,3 +47,60 @@ How to fix this:
 	- Use this in comparisons
 	- Do not use this to reassign variables
 
+## If Statements
+
+Structure:
+
+```
+// if
+if (condition) {
+	if_body
+}
+
+// if-else
+if (condition) {
+	if_body
+} else {
+	else_body
+}
+```
+
+- if and else are Java keywords
+- the condition is a boolean expression and must be wrapped in parenthesis
+- the if_body is one or more statements and will only be executed if the condition evaluates to true
+- the else_body is one or more statements and will only be executed if the condition evaluates to false
+- else is optional; you can have an if statement with no else
+
+## While Statements (While Loops)
+
+Structure:
+
+```
+while (condition) {
+	while_body
+}
+```
+
+- while is a keyword
+- the condition is a boolean expression wrapped in parenthesis, just like if
+- the body is one or more statements
+- if the condition evaluates to true, then the body will execute and this process will repeat
+- every time the condition is true, we re-evaluate after the body and potentially keep repeating the process indefinitely
+
+To end a running program stuck in a loop, ctrl+c (even on Mac it's control, not command)
+
+## Counting Loop
+
+If you know how many times a loop must repeat or can calculate it while the program is running, then you may want to use this pattern:
+
+```
+// init: create a counter variable and initialize it to 0
+int i = 0;
+// condition: check whether the counter variable is less than the desired number of repetitions
+while (i < repetitions) {
+	// body: whatever the loop does
+	
+	// update: increment the counter variable (increase its value by 1)
+	i = i + 1;
+}
+```
