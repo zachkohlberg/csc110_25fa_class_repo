@@ -53,11 +53,28 @@ variable = identifier(arguments);
 Returning from a function:
 
 - `return` is a keyword that stops the function execution
+- return is normally followed by an expression; this expression
+  is evaluated and the result is returned to the calling code
 - if a function's return type is `void`, then we don't have
   to explicitly return (happens at the end of the function)
 - if a function's return type isn't `void`, then it must be
   guaranteed to return a value of that type
 
+## Variable Scope
 
+- scope = part of the program a variable is valid
+- normally, scope is the block in which we declare the variable
+- function parameters are scoped to the function's body/implementation
+- separate functions have completely different scopes, so you can
+  reuse names between functions with no conflict
+- parameter names never have to match argument names: you can supply
+  a variable named x for a parameter named age as long as the types
+  are compatible
+
+## Arrays
+
+- don't print array variables directly
+- the benefit of arrays is that we can batch process them with a counting loop,
+  which scales much better than writing the same code for individual variables
 
 

@@ -31,6 +31,7 @@ void main() {
     a = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
     // counting loops are perfect for processing entire arrays
+    IO.println("Printing an array using a loop:");
     IO.print("a: ");
     int i = 0;
     while (i < a.length) {
@@ -40,5 +41,9 @@ void main() {
     }
     // end the line
     IO.println();
+
+    // we can't really print an array by just printing the variable
+    IO.println("Printing the array variable:");
+    IO.println("a: " + a);
 }
 

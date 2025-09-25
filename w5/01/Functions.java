@@ -20,10 +20,8 @@ void main() {
 
 // declaring and implementing our square function
 int square(int n) {
-    // work
-    int nSquared = n * n;
-    // return the result
-    return nSquared;
+    // shorter than the original example:
+    return n * n;
 }
 
 // declaring and implementing our repeat function
