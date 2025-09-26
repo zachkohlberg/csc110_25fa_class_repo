@@ -42,9 +42,27 @@ returning from a function
 - other functions must guarantee that they always return
   a value of their return type
 
+## Scope
 
+- function parameters are scoped to the function's body
+- because functions have separate scopes, we can use the
+  same variable/parameter name in different functions
+- variable arguments don't need the same name as the
+  corresponding parameter
 
+## Arrays
 
+- arrays are collections of values that all share a type; has a fixed length
+- to create an array:
 
+```
+elementType[] identifier = new elementType[length];
 
+elementType[] identifier = new elementType[] { list of elements };
+```
+
+- first version initializes each element to a default value (zero for
+  numbers, null for strings)
+- don't try to print an array variable directly, iterate over the elements
+  and print them separately
 

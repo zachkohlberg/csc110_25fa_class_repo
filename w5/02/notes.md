@@ -41,6 +41,30 @@ Returning from a function
   then it must guarantee that it ends by returning a value
   of that type
 
+## Scope
 
+- scope: part of a program where a variable exists, normally
+  the block in which you declared it
+- parameters are scoped to the function's implementation
+- functions have separate scopes, so names can be reused
+  without conflict
+- names of arguments don't need to match names of parameters;
+  they can, but it doesn't matter
 
+## Arrays
+
+- can make arrays of any type by putting `[]` after the type
+- initializing an array:
+
+```
+elementType[] identifier = new elementType[length];
+
+elementType[] identifier = new elementType[] { list of elements };
+```
+
+- don't try to print an array variable or convert the variable to a string,
+  just produces garbage
+- the counting loop pattern is perfect for iterating over an array: the length
+  is the number of repetitions and the counter variable can be used to index
+  the array at a different location with every repetition
 

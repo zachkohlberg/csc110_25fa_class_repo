@@ -1,4 +1,4 @@
-// FunctionDefsAndCalls.java
+// FunctionDefsAndCall.java
 
 // Function definitions/implementations
 
@@ -10,7 +10,7 @@
 //   - id: c, type: double
 // - return type: double
 double average(double a, double b, double c) {
-    // this block is the definition
+    // this block is the implementation
     double sum = a + b + c;
     // return keyword exits the function and returns the result of the following
     // expression to the code that called this function
