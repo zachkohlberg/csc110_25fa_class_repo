@@ -183,3 +183,99 @@ Easy way to find this: add 1 to the one's complement!
   0000 0000
 ```
 
+a = some 8-digit fixed-size positive decimal integer
+
+a_comp = the ten's complement of a
+
+a + a_comp = 0000 0000
+
+b = some other 8-digit fixed-size positive decimal integer
+
+b + a_comp = b - a
+
+```
+a      = 0000 0005
+a_comp = 9999 9995
+b      = 0000 0012
+
+ 11111 11
+  0000 0012
++ 9999 9995
+===========
+  0000 0007
+```
+
+## Integer Types
+
+- signed = can be positive, zero, or negative (encoded with two's complement)
+- usigned = can't be negative
+- bit = binary digit
+- byte = 8 bits
+- kilo (KB), mega, giga, tera, etc. prefixes denote thousands, millions, etc. of bytes
+- kibi (KiB), mebi, gibi, tebi
+- integer sizes: 1, 2, 4, 8 bytes or 8, 16, 32, 64 bits
+  - byte: 8-bit signed integer
+  - short: 16-bit signed integer
+  - int: 32-bit signed integer
+  - long: 64-bit signed integer
+  - char: 16-bit unsigned integer used to represent individual text characters
+- overflow: if integers exceed the max/min size for their type, then they wrap around to the other end
+
+```
+think about base-10 fixed size:
+
+0000 0000 is zero
+0000 0000 is the ten's complement of zero
+
+5000 0000 is -50 million
+5000 0000 is its own ten's complement
+
+0000 0000 to 4999 9999 are zero and positive numbers
+5000 0000 to 9999 9999 are negative numbers
+
+this system can encode any integer from -50 million to 49,999,999
+the zero is taken from the positive numbers
+
+base-2 fixed size signed integers:
+
+0000 0000 is zero and its own two's complement
+
+1000 0000 is -128 and its own two's complement
+
+0000 0000 to 0111 1111 are zero and positive numbers
+1000 0000 to 1111 1111 are negative numbers
+
+this can represent any integer from -128 to 127
+```
+
+## Floating-Point Numbers
+
+We want to represent real numbers, but:
+
+- We have to work with a fixed size
+- We'd like something that's all-purpose: can work with very
+  small numbers (between 1 and 0) and very large numbers (like
+  10^50).
+
+Let's say we have 8 decimal digits to work with and want to represent
+real numbers. How would we do this?
+
+XXXX.YYYY: the X digits are 10^3, 10^2, 10^1, 10^0 and the Y digits are
+10^-1, 10^-2, 10^-3, 10^-4. This is fixed point, and it doesn't have the
+qualities we were looking for.
+
+XX YYYYYY: the X digits are an exponent, and the Y digits are the significant
+digits. This is floating point, and it does have the qualities we were looking for.
+
+```
+10 500000 = 0.500000 x 10^10 = 5 billion
+
+99 999999 = 0.999999 x 10^99 = ???
+
+5,000,000,053 = 10 500000
+```
+
+
+
+
+

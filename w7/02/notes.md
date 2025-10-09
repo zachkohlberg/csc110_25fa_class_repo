@@ -150,4 +150,93 @@ Easy way to get the two's complement: add 1 to the one's complement!
   0000 0000 =   0
 ```
 
+Let's look at negative 8-digit fixed size base 10 numbers.
+
+```
+a = fixed-size decimal integer
+a_comp = the ten's complement of a
+
+a + a_comp = 0
+
+b = a different fixed-size decimal integer
+
+I claim: b + a_comp = b - a
+
+a + a_comp = 0
+b + a + a_comp = b
+b + a + a_comp - a = b - a
+b + a_comp = b - a
+
+0000 0005 = 5
+9999 9995 = -5
+0000 0012 = 12
+
+ 11111 11
+  0000 0012
++ 9999 9995
+===========
+  0000 0007 = 7
+```
+
+## Integers
+
+- signed = can be positive, zero, or negative
+- unsigned = can't be negative
+- overflow = when integers exceed the range their fixed size can represent,
+  they overflow to the other end of that range
+
+```
+8-digit decimal fixed size signed integers
+
+0000 0000 = zero
+0000 0000 = ten's complement of zero
+
+5000 0000 = fifty million
+5000 0000 = ten's complement of fifty million
+
+0000 0000 to 4999 9999 = zero and positive numbers (0 to 49,999,999)
+5000 0000 to 9999 9999 = negative numbers (-50 million to -1)
+
+8-digit binary fixed size signed integers
+
+0000 0000 = zero and its two's complement
+1000 0000 = 128 and its two's complement
+
+0000 0000 to 0111 1111 = zero and positive numbers (0 to 127)
+1000 0000 to 1111 1111 = negative numbers (-128 to -1)
+```
+
+- bit = single 1 or 0
+- byte = 8 bits
+- Java integer types:
+  - byte: 8-bit or 1-byte signed integer
+  - short: 16-bit or 2-byte signed integer
+  - int: 32-bit or 4-byte signed integer
+  - long: 64-bit or 8-byte signed integer
+  - char: 16-bit or 2-byte unsigned integer
+
+## Floating-Point Numbers
+
+Imagine we had 8 decimal digits to represent a real number
+
+XXXX YYYY: first four digits are the whole number part, second
+four digits are the fractional part (fixed point)
+
+1128 9940 = 1128.994
+
+XX YYYYYY: first two digits are an exponent, other six are the
+significant digits (floating point)
+
+11 289940 = 0.28994 x 10^11 = 28,994,000,000
+
+Java's floating-point types:
+
+- float = 32-bit/4-byte single-precision floating point number
+- double = 64-bit/8-byte double-precision floating point number
+
+
+
+
+
+
 
