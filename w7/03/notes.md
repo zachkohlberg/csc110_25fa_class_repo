@@ -171,5 +171,88 @@ Ten's complement of 0006 3584
   0000 2200
 ```
 
+Algebra to show ten's complement numbers are negative in this system:
+
+```
+a = positive 8-digit fixed-sized signed integer
+a_comp = ten's complement of a
+
+a + a_comp = 0
+
+b = another positive 8-digit blah blah blah
+
+My claim: b + a_comp = b - a
+
+a + a_comp = 0
++b           +b
+b + a + a_comp = b
+-a               -a
+b + a_comp = b - a
+```
+
+## Integers
+
+- signed = can be positive, zero, or negative (two's complement encodes negatives)
+- unsigned = can't be negative
+- bit = 1 or 0 in a binary number
+- byte = 8 bits
+- prefixes for larger quantities: kilo, mega, giga, tera
+  - abbreviated KB, MB, GB, TB
+- kibi, mebi, gibi, tebi prefixes explicitly refer to factors of 2^10
+  - abbreviated KiB, MiB, GiB, TiB
+- Java integer types:
+  - byte: signed 8-bit/1-byte integer
+  - short: signed 16-bit/2-byte integer
+  - int: signed 32-bit/4-byte integer
+  - long: signed 64-bit/8-byte integer
+  - char: unsigned 16-bit/2-byte integer
+- overflow: when you exceed the range of values a type can represent, it "overflows"
+  into the other end of that range
+
+```
+Overflow in 8-digit decimal signed integers
+
+0000 0000 = 0
+0000 0000 = ten's complement of 0
+
+5000 0000 = -50 million
+5000 0000 = ten's complement of -50 million
+
+0000 0000 to 4999 9999 = 0 to 49,999,999, the nonnegative numbers
+5000 0000 to 9999 9999 = -50 million to -1, the negative numbers
+
+Overflow happens between 49,999,999 and -50 million
+
+In 8-bit signed binary integers
+
+0000 0000 = 0 and its own two's complement
+1000 0000 = -128 and its own two's complement
+
+0000 0000 to 0111 1111 = 0 to 127, the nonnegative numbers
+1000 0000 to 1111 1111 = -128 to -1, the negative numbers
+```
+
+## Floating-Point Numbers
+
+We're designing a way to encode real numbers in base-10 with only 8 digits.
+
+Fixed Point: XXXX YYYY = XXXX.YYYY, the first four digits are the integer
+portion and the last four digits are the fractional portion.
+
+1158 3840 = 1158.384
+
+Floating Point: XX YYYYYY = 0.YYYYYY x 10^XX, first two digits are an exponent,
+others are the significant digits
+
+11 583840 = 0.583840 x 10^11 = 58,384,000,000
+00 000156 = 0.000158 x 10^0 = 0.000158
+
+Java's floating-point types:
+
+- float: 32-bit/4-byte, single-precision floating-point number
+- double: 64-bit/8-byte, double-precision floating-point number
+
+
+
 
 

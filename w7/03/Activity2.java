@@ -1,17 +1,17 @@
-// Activity1.java
+// Activity2.java
 void main() {
     float a = 0f;
 
     int i = 0;
-    while (i < 10_000_000) {
+    while (i < 100_000_000) {
         a = a + 0.01f;
         i = i + 1;
     }
 
     IO.println(a);
 }
-// Guesses?
-// - 10,000,000
-// - 100,000
-// - 100,000
-// - 100,000
+// Guesses
+// - 1,000,000
+// - 950,000
+// - 825,000
+// - 825,100
