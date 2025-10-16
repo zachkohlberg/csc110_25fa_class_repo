@@ -53,6 +53,95 @@ in Java, we can generate random numbers with `Math.random()`
 - letters and digits are encoded as sequential numbers
 - can get individual characters from a string with the `.charAt(index)` method
 
+## Value Types
+
+- value types store their value directly
+- reference types only store a reference to their value
+- primitive type: types built into the language, all Java primitive types are value types
+  - byte, short, int, long, char, float, double, boolean, void
 
 
+### Literal Values
 
+integer literals
+
+- `int` is Java's default integer type; any integer literal is an `int` unless specified to be something else
+- `long` literals can be written by appending an L or l to the end of the number
+- can include underscores for spacing/readability without changing the number's value
+- can write in other basis with the following prefixes:
+  - 0b: binary
+  - 0: octal (base-8)
+  - 0x: hexadecimal
+
+floating-point literals
+
+- `double` is Java's default floating-point type; any floating-point literal is a `double` by default
+- `float` literals can be written with an F or f at the end of the number
+- can write floating-point literals using scientific notation: E at the end followed by an exponent
+
+char literals
+
+- surrounded by single-quotes: 'c' is a `char`, "c" is a `String`
+- can use escapes in `char` literals: '\n', '\'', '\t'
+- unicode: '\u000a'
+
+## Reference Types
+
+- reference types store their data on the "heap", another region of memory
+  - program's memory is split into a few areas:
+    - stack: local variables, function calls, anything with a compile-time-known size
+    - heap: area for dynamically allocating memory, stores more complex types whose type can't be
+      known at compile time
+    - static/read-only memory: code, constants that are defined in the code
+- any non-primitive type is stored on the heap and accessed through a reference
+- why?
+  - non-primitive types can hold a lot of data, and can have a dynamic size
+  - let's say you have 10 KB of text from a file, would you rather copy the reference (8 bytes)
+    or all of the text (10,000 bytes)?
+- examples:
+  - Strings are reference types
+  - arrays are reference types
+
+## Objects
+
+- Object-Oriented Programming: a programming paradigm where we model a program as
+  a collection of objects that can interact with each other
+- Object: data + functions
+  - objects contain data
+  - objects have methods (built-in functions) that operate on their data
+  - ex: String
+    - stores an array of `char`s
+    - has methods that can return subsets of these chars (substring, charAt), modified
+      copies of itself (toUpperCase, toLowerCase, trim), or other information (length)
+- classes
+  - class defines a type of object: what is its data, what are its methods
+  - instances of a class are individual objects based on the class
+  - ex: String
+    - Java's standard library has a String class that defines how Strings work
+    - each string in your program is an instance of the String class
+- Objects in Java are always stored on the heap and accessed through references
+- Java's garbage collector manages heap memory for you: it allocates space for
+  new objects and frees space occupied by unused objects
+
+## Equality
+
+The `==` and `!=` operators compare the contents of a variable and don't follow
+references to compare the data they point to. They are rarely useful with references.
+
+The `equals` method exists for every reference type, but by default it also just
+compares references and not the referenced data. Some types define a comparison
+that looks at their data, but not all.
+
+- `String` defines a `.equals` method that compares its contents to another string
+- arrays do not do this, so `.equals` won't help when comparing arrays
+
+If a type doesn't define a proper `.equals` comparison, then you need to write it
+yourself or use a function from a library.
+
+## Mutability
+
+- mutable: changeable, its data can be modified after initialization
+- immutable: unchangeable, its data cannot be modified after initialization
+- `String` is immutable; you cannot modify an existing `String`
+  - most string methods like toUpperCase and substring create new strings
+- arrays are mutable; you can reassign their elements whenever you want

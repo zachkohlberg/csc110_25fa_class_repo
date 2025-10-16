@@ -46,7 +46,94 @@
   to know the answer
 
 
+## Value Types
 
+- value type: data (value) stored directly
+- reference type: data stored on heap, reference stored directly
+- primitive types: simple types built into the language
+  - all of Java's primitive types are value types
+  - byte, short, int, long, char, boolean, float, double, void
 
+### Literals
 
+integer literals
 
+- `int` is Java's default integer type, any integer literal is an `int` by default
+- `long` literals can be written with an L or l at the end
+- can add underscores in literals without changing the value, useful for spacing/readability
+- can write different bases with a prefix:
+  - 0b: binary
+  - 0: octal (base-8)
+  - 0x: hexadecimal
+
+floating-point literals
+
+- `double` is Java's default floating-point type, any floating-point literal is a `double` by default
+- `float` literals can be written with an F or f at the end
+- can write floating-point numbers in scientific notation (end in E followed by the exponent)
+
+character literals
+
+- surrounded with single quotes, not double quotes: 'c' is a `char`, "c" is a `String`
+- can use escape sequences: '\n', '\t', '\''
+- can use \u to write 16-bit unicode values: '\u000a'
+
+## Reference Types
+
+- variable stores the location on the heap where the data is stored, not the data itself
+- program memory
+  - stack: stores local variables, function calls, anything whose size can be determined
+    by the compiler can go on the stack
+  - heap: long-term dynamic storage, contains dynamically-sized values
+  - static/readonly: constants, your code
+- in Java: everything that's not a primitive goes on the heap and is accessed through a reference
+- why use references?
+  - largest primitives/value types in Java are 64 bits
+  - you can have objects like Strings that take up kilobytes, megabytes, or even gigabytes
+  - much easier to pass around an 8-byte pointer/reference instead of copying huge amounts of
+    data
+- Java's garbage collector manages heap memory for you: new objects are automatically allocated on
+  the heap, and the garbage collector automatically frees their memory when they're no longer used
+- Strings and arrays are reference types
+
+### Object-Oriented Programming (OOP)
+
+- OOP is a programming paradigm where we model a program in terms of objects that interact with
+  each other
+- Object = data + methods (built-in functions that operate on the object)
+  - example: String
+    - data = an array of character's
+    - methods = toUpperCase, substring, charAt, etc.
+- Classes
+  - class defines a type of object: what data it contains, all of its methods
+  - instances are individual objects created from this definition
+  - ex: String
+    - Java's standard library includes a String class with all the String methods
+    - all the strings in your program are instances of this class
+- Objects store their data on the heap, accessed through a reference
+- Object data can include primitive values and other reference types
+- In Java, everything is part of a class
+  - compact source programs like ours have an "implied class"
+  - namespaces we've been using like Math and IO are classes
+
+### Equality
+
+The `==` and `!=` compare the contents of variables. With ref types, they are comparing the
+references, not the data being referenced. Usually don't want to compare ref types with `==`
+and `!=` for this reason.
+
+The `.equals` method exists for every reference type, but by default it just compares the
+reference like `==` and `!=`. Some ref types define their own equals method that actually
+compares the data, and these are the types that you should compare using `.equals`.
+
+- `String` does this, as we've already seen
+- arrays don't do this, so don't compare them with `.equals` (or `==` and `!=`)
+- for types that don't, like arrays, you can code it yourself or find a function in a
+  library to do it for you
+
+## Mutability
+
+- mutable: can be changed, you're allowed to modify its data after initialization
+- immutable: can't be changed, you're not allowed to modify its data after init
+- `String` is an immutable type
+- arrays are mutable, you can reassign their elements at any time

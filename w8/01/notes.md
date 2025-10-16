@@ -55,5 +55,99 @@ To generate random int values, you scale, truncate, and offset this number:
 - letters and digits are encoded sequentially, allowing for fun tricks
 - String's `charAt(index)` method gets a single char from a string
 
+## Value Types
 
+- value type: data type that stores value directly
+- reference type: data type that stores value on "heap" and directly stores a
+  reference to the heap data
+- primitive types: very basic types, simple and baked directly into the language
+  - byte, short, int, long, char, boolean, float, double, void
+  - Java's primitive types are all value types
 
+### Primitive Type Literals
+
+integer literals:
+
+- any integer value (no decimal point) is by default an `int` literal
+- you can write a `long` literal by appending an L or l to an integer literal
+- we can write integer literals in other bases by including a special prefix:
+  - 0b: binary
+  - 0: octal (base-8)
+  - 0x: hexadecimal
+- can use underscores for spacing without changing the meaning of the number
+
+floating-point literals:
+
+- any floating-point number (has a decimal point) is `double` by default
+- appending F or f to the end makes any integer or floating-point literal a `float`
+- can write floating-point literals in scientific notation by ending with E followed
+  by an exponent
+
+char literals:
+
+- surrounded by single quotes, not double quotes: 'c' is a `char` and "c" is a `String`
+- can use escape sequences in `char` literals: '\n', '\t', '\''
+- can use unicode escape sequences as well: '\u000a'
+
+## Reference Types
+
+- ref types don't store data directly in variables
+
+```java
+// a stores a reference to the string containing 'H', 'e', 'l', 'l', 'o'
+// the string itself is stored on the heap
+String a = "Hello";
+
+// b stores a reference to the array containing 1, 2, and 3
+// the array itself is stored on the heap
+int[] b = new int[] { 1, 2, 3 };
+```
+
+- `String` and array are reference types
+- Anything more complex than a primitive type is usually a ref type
+- Why?
+  - Strings and arrays can be very large; much cheaper to copy a reference (64 bits) than
+    a 10 KB string
+  - Java can manage memory for you; reference types are automatically allocated on the heap
+    and freed when no longer needed
+  - Garbage collector manages anything that lives on the heap
+
+### Objects
+
+Java allows you to define your own types with a `class`. `String` is defined by a class,
+as are many other types.
+
+- a class defines a type of object
+  - there is a `String` class that defines how strings work and what data is stored in a string
+- an object is an individual instance of a class
+  - each string in your program is an instance of the string class; separate objects that adhere
+    to the definition in the string class
+- objects are just data that can have functions (methods) attached to them
+  - strings have methods such as `toUpperCase`, `substring`, and `charAt`
+- objects can be complex:
+  - objects can contain a bunch of primitive values
+  - objects can contain references to other objects
+  - objects are always stored on the heap, with variables only keeping a reference to them
+
+### Equality and References
+
+The `==` and `!=` operators compare the contents of a variable:
+
+- Ref types store a reference in the variable
+- Multiple objects can have identical data
+- These operators will only compare the reference, not the data the reference points to
+- Usually a bad idea to use `==` and `!=` with any ref type
+
+The `.equals` method exists for every object, but only some objects implement a version
+that compares their data. By default, it just uses the `==` operator.
+
+- `String` defines its own equals method that properly compares its contents to another string
+- Arrays do not define an equals method, they use the default
+  - If you want to compare arrays or any type that doesn't define its own equals method, then
+    you need to find a method that does this for you or write your own comparison code
+
+## Mutability and References
+
+- mutable: changeable; its data can be modified
+- immutable: unchangeable; its data cannot be modified
+- Strings are immutable, arrays are mutable
