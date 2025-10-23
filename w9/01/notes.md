@@ -146,8 +146,23 @@ for (String s : array) {
     - %4d pads an integer with spaces so it takes up at least 4 characters
     - %06d pads an integer with zeroes instead of spaces, at least 6 chars
     - %.3f rounds a floating-point number to 3 decimal places
+- copy vs mutate
+  - copying a data structure and modifying the copy preserves the original data
+  - mutating the data structure avoids using extra memory and taking extra time to create
+    the copy, which is generally faster
 
-NOTE: cover formatting specifiers at start of next class!
+## 2D Arrays
+
+- 2d arrays are just arrays of arrays: int[][] instead of int[]
+- typically you want all subarrays to be the same length (rectangular array),
+  but your subarrays can have different lengths (ragged array)
+- can iterate over with nested for loops
+  - be careful about using row/col vs x/y coordinates
+
+
+
+
+
 
 
 

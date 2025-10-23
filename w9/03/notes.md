@@ -138,7 +138,32 @@ for (String s : array) {
     - the string needs to use a consistent delimiter between each part
     - the delimiter is a string and can be more than one character
     - example: `"1 2 3 4".split(" ")` splits around spaces, giving us the array `{ "1", "2", "3", "4" }`
-- `String.format(...)`: ...
+- `String.format(...)`: takes a format string and some arguments, returns a string showing the arguments
+  inserted into the format string
+    - format specifiers: %s (any), %d (decimal integer), and %f (floating point) act as placeholders
+      for the arguments in the format string
+    - %d can include padding: %5d pads numbers with spaces if they're less than 5 digits, and %05d pads
+      with zeroes
+    - %f can specify precision for rounding: %.3f rounds to three decimal places
+- modified copy vs mutate in place
+    - modified copy: preserves original data but requires more memory/time
+    - mutate in place: destroys original data but doesn't require extra memory and usually takes less time
+
+## 2D Arrays
+
+- we can make arrays of arrays: int[][] vs int[]; this adds a second dimension
+- uneven/ragged arrays
+    - each subarray (row) can be a different size
+    - usually you want everything the same size (rectangular)
+    - may have to deal with code that gives an uneven array
+- to iterate over a 2d array
+    - iterate over it like you would a 1d array
+    - each element of the 2d array is a row (1d array)
+    - now you can iterate over the row with a second loop
+
+
+
+
 
 
 
