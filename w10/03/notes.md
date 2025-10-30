@@ -29,5 +29,33 @@
     - if you try to call a method on a null value or access its properties, you trigger
       a `NullPointerException`
 - do-while loops
+    - similar to while, but condition is checked at the end of the loop
+    - because condition isn't checked until the end, it always performs one or more iterations
+    - normal while loops perform zero or more iterations
+    - odd syntax: includes a semicolon after the while condition
 
-TODO: do-while syntax
+```java
+// regular while loop
+while (<condition>) {
+    <statements>
+}
+
+// do-while loop
+do {
+    <statements>
+} while (<condition>);
+```
+
+- switch syntax: newer syntax (Java 12-14), JEP 361 (https://openjdk.org/jeps/361)
+    - arrow syntax and switch expressions
+    - multiple values in a case separated by commas
+    - arrow -> instead of colon
+    - no fallthrough, no break
+    - can use switch as an expression, but you'll probably need a semicolon at the end
+
+
+
+
+
+
+
