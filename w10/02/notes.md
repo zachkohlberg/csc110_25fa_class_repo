@@ -47,6 +47,12 @@ do {
 } while (<condition>);
 ```
 
+- switch: newer (Java 12-14) syntax, JEP 361 (https://openjdk.org/jeps/361)
+    - arrow syntax instead of colon
+    - treat switch statement as a switch expression
+    - removes fallthrough, no breaks
+    - list multiple values after a case
+
 
 
 

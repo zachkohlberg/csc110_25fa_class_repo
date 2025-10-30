@@ -49,6 +49,12 @@ do {
 } while (<condition>);
 ```
 
+- switch syntax: Java 12-14 update, JEP 361 (https://openjdk.org/jeps/361)
+    - can use switch as an expression
+    - arrow syntax allows listing multiple values, no break, no fallthrough
+
+## 
+
 
 
 
