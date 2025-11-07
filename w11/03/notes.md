@@ -16,3 +16,30 @@ Classes as types
 
 - class: defines a type of object
 - instance: an object created based on a class
+
+## Inheritance
+
+- Animal
+    - Dog
+        - GoldenRetriever
+        - Chihuahua
+    - Cat
+- `extends` is a keyword used to say which class another class inherits from
+- if Dog extends Animal
+    - Animal is the "superclass" or "parent class" of Dog
+    - Dog is the "subclass" or "child class" of Animal
+    - Dog inherits all of the variables and methods in Animal
+    - Code that operates on Animal objects can operate on Dog objects
+- `Object` class
+    - every Java class extends extends exactly one other class
+    - if you don't specify a superclass, then you extend Object
+    - Object is the direct or indirect superclass of every other Java class
+    - Object contains a few methods, including `.equals(Object)` and `.toString()`
+      that some classes may want to override
+- overriding: create a method with the same name, return type, and parameter types
+  as an inherited method
+
+
+
+
+
