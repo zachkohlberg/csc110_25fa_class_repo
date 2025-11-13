@@ -12,3 +12,12 @@
 - instance method: called on a specific instance
 - static method: just called from the class, might have
   nothing to do with instances of the class
+
+## System, Scanner
+
+- System has two `PrintStream` variables and one `InputStream` variable: out, err, and in
+  - `PrintStream` has convenient functions for printing output
+  - `InputStream` lacks convenient functions for reading input as Strings
+- See Input.java for example of processing `InputStream` input and why you probably don't want
+  to do this yourself
+- Scanner has more convenient methods for reading input than an input stream, see Input2.java
